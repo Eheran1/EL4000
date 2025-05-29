@@ -2,14 +2,11 @@
 """
 Created on Wed May  7 00:03:01 2025
 
-@author: leonh
-"""
-
-"""
-el4000_ide.py – read every EL3500/4000 *.BIN in the current working directory
+Read every EL3500/4000 *.BIN in the current working directory
 and write one consolidated CSV called `el4000_export.csv`.
 
-Open this file in your IDE and press ‑‑► Run.  Tested on Python ≥3.9.
+Open this file in your IDE and press Run.
+Tested on Python 3.12
 """
 
 import csv, logging, struct, sys
@@ -148,7 +145,7 @@ def plot_watt_over_time(csv_path: Path | str = "el4000_export.csv") -> None:
 # convenience entry‑point when running the module
 if __name__ == "__main__":
     try:
-        out = export_all(r"C:\Users\leonh\Desktop\Datenlogs\Stromlogger\2024")    # ← put your folder here
+        out = export_all(r"C:\Users\Eheran\Desktop\Datalogs\2024")    # ← put your folder here
     except Exception as exc:        # noqa: broad‑except
         LOG.exception("Fatal error: %s", exc)
         sys.exit(1)
